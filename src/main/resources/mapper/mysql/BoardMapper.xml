@@ -5,7 +5,7 @@
 	<insert id="write" parameterType="com.docmall.demo.domain.BoardVO">
 	
 		INSERT INTO
-			board(title, content, writer)
+			BOARD(title, content, writer)
 		VALUES
 			(#{title}, #{content}, #{writer} )
 		
@@ -16,7 +16,7 @@
 		SELECT 
 			bno, title, content, writer, regdate, updatedate, viewcount
 		FROM 
-			board 
+			BOARD 
 		ORDER BY 
 			bno DESC
 	
@@ -25,7 +25,7 @@
 	<update id="readCount" parameterType="Long">
 	
 		UPDATE
-			board
+			BOARD
 		SET
 			viewcount = viewcount + 1
 		WHERE
@@ -38,7 +38,7 @@
 		SELECT 
 			bno, title, content, writer, regdate, updatedate, viewcount
 		FROM 
-			board 
+			BOARD 
 		WHERE 
 			bno = #{bno}
 	
@@ -47,7 +47,7 @@
 	<update id="modify" parameterType="com.docmall.demo.domain.BoardVO">
 	
 		UPDATE 
-			board
+			BOARD
     	SET 
     		title = #{title}, content = #{content}, updatedate = now()
 		WHERE 
@@ -58,7 +58,7 @@
 	<delete id="delete" parameterType="Long">
 	
 		DELETE FROM
-			board
+			BOARD
 		WHERE
 			bno = #{bno}			
 	
